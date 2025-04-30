@@ -1,0 +1,27 @@
+<!-- src/app/components/wishlist/wishlist.component.html -->
+<div *ngIf="error">{{ error }}</div>
+
+<div class="wishlist-container" *ngIf="!loading && !error">
+  <h2>Список желаемого</h2>
+  <div *ngIf="products.length === 0">Список пуст</div>
+
+  <div class="products-grid">
+    <div class="product-card" *ngFor="let p of products" (click)="viewProduct(p)">
+      <img *ngIf="p.imageUrl" [src]="p.imageUrl" [alt]="p.name">
+      <div class="product-info">
+        <h3>{{ p.brand }} {{ p.name }}</h3>
+        <p class="price">{{ p.price | currency:'RUB':'symbol-narrow' }}</p>
+        <div class="actions">
+          <button mat-button color="primary"
+                  (click)="viewProduct(p); $event.stopPropagation()">
+            Перейти
+          </button>
+          <button mat-button color="warn"
+                  (click)="removeFromWishlist(p); $event.stopPropagation()">
+            Удалить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

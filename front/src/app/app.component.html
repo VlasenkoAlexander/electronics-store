@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+  <span [routerLink]="['/']" style="cursor: pointer;">Магазин электроники</span>
+  <span class="spacer"></span>
+  <button mat-button [routerLink]="['/cart']" matBadge="{{cartItemCount}}" matBadgeColor="accent">
+    <mat-icon>shopping_cart</mat-icon> Корзина
+  </button>
+  <button mat-button [routerLink]="['/wishlist']" *ngIf="isAuthenticated()">
+    <mat-icon>favorite</mat-icon> Избранное
+  </button>
+  <button mat-button [routerLink]="['/my-orders']" *ngIf="isAuthenticated()">
+    <mat-icon>receipt_long</mat-icon> Мои заказы
+  </button>
+  <button mat-button [routerLink]="['/profile']" *ngIf="isAuthenticated()">
+    <mat-icon>person</mat-icon> Личный кабинет
+  </button>
+  <button mat-button [routerLink]="['/admin']" *ngIf="isAdminFlag">
+    <mat-icon>admin_panel_settings</mat-icon> Администрирование
+  </button>
+  <span class="spacer"></span>
+  <button mat-button [routerLink]="['/login']" *ngIf="!isAuthenticated()">Войти</button>
+  <button mat-button [routerLink]="['/register']" *ngIf="!isAuthenticated()">Регистрация</button>
+  <button mat-button (click)="logout()" *ngIf="isAuthenticated()">Выйти</button>
+</mat-toolbar>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="app-footer">
+  <p>&copy; 2025 Магазин электроники.</p>
+</footer>

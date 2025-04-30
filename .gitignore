@@ -1,0 +1,10 @@
+# Node и Angular
+node_modules/
+**/.angular/
+front/dist/
+front/.angular/
+front/node/
+
+# Логи и прочее
+npm-debug.log*
+.DS_Store

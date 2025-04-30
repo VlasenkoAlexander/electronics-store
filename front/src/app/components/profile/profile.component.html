@@ -1,0 +1,58 @@
+<mat-card class="profile-card">
+  <mat-card-title>Профиль</mat-card-title>
+  <mat-card-content>
+    <!-- Loyalty info moved to top -->
+    <div *ngIf="loyaltyLevel" class="loyalty-info">
+      <p><strong>Сумма покупок:</strong> {{ totalSpent | currency:'RUB':'symbol-narrow' }}</p>
+      <p><strong>Уровень лояльности:</strong> {{ loyaltyLevel }}</p>
+      <p><strong>Ваша скидка:</strong> {{ discountPercent }}%</p>
+    </div>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Имя пользователя</mat-label>
+        <input matInput formControlName="username" [disabled]="true">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+        <mat-error *ngIf="profileForm.get('email')?.hasError('required')">
+          Email обязателен
+        </mat-error>
+        <mat-error *ngIf="profileForm.get('email')?.hasError('email')">
+          Некорректный email
+        </mat-error>
+      </mat-form-field>
+      <!-- Optional profile fields -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Фамилия</mat-label>
+        <input matInput formControlName="lastName" placeholder="Необязательно">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Имя</mat-label>
+        <input matInput formControlName="firstName" placeholder="Необязательно">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Отчество</mat-label>
+        <input matInput formControlName="middleName" placeholder="Необязательно">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Дата рождения</mat-label>
+        <input matInput type="date" formControlName="birthDate">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Телефон</mat-label>
+        <input matInput type="tel" formControlName="phone" placeholder="Необязательно">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Новый пароль</mat-label>
+        <input matInput type="password" formControlName="password">
+      </mat-form-field>
+      <div class="button-group">
+        <button mat-raised-button color="primary" type="submit">Сохранить</button>
+        <button mat-raised-button color="warn" type="button" (click)="deleteAccount()">Удалить аккаунт</button>
+      </div>
+    </form>
+    <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  </mat-card-content>
+</mat-card>

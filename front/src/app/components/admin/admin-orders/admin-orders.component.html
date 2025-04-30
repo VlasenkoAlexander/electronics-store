@@ -1,0 +1,73 @@
+<div class="admin-orders">
+  <div class="header">
+    <h1>Управление заказами</h1>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <mat-spinner diameter="40"></mat-spinner>
+    <p>Загрузка заказов...</p>
+  </div>
+
+  <div *ngIf="error" class="error">
+    <p>{{ error }}</p>
+    <button mat-raised-button color="primary" (click)="ngOnInit()">Попробовать снова</button>
+  </div>
+
+  <div *ngIf="!loading && !error" class="orders-table-container">
+    <table mat-table [dataSource]="orders" class="orders-table">
+
+      <!-- User Column -->
+      <ng-container matColumnDef="user">
+        <th mat-header-cell *matHeaderCellDef>Пользователь</th>
+        <td mat-cell *matCellDef="let order">{{ order.user?.username || order.user?.email }}</td>
+      </ng-container>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="orderDate">
+        <th mat-header-cell *matHeaderCellDef>Дата</th>
+        <td mat-cell *matCellDef="let order">{{ order.orderDate | date:'dd.MM.yyyy HH:mm' }}</td>
+      </ng-container>
+
+      <!-- Delivery Address Column -->
+      <ng-container matColumnDef="deliveryAddress">
+        <th mat-header-cell *matHeaderCellDef>Адрес доставки</th>
+        <td mat-cell *matCellDef="let order">{{ order.deliveryAddress }}</td>
+      </ng-container>
+
+      <!-- Total Price Column -->
+      <ng-container matColumnDef="totalPrice">
+        <th mat-header-cell *matHeaderCellDef>Итого</th>
+        <td mat-cell *matCellDef="let order">{{ order.totalPrice | number:'1.2-2' }}</td>
+      </ng-container>
+
+      <!-- Products Column -->
+      <ng-container matColumnDef="products">
+        <th mat-header-cell *matHeaderCellDef>Товары</th>
+        <td mat-cell *matCellDef="let order">
+          <ul>
+            <li *ngFor="let product of order.products">
+              {{ product.name }} ({{ product.price | number:'1.2-2' }})
+            </li>
+          </ul>
+        </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Действия</th>
+        <td mat-cell *matCellDef="let order">
+          <button mat-icon-button color="warn" (click)="deleteOrder(order)" matTooltip="Удалить">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['user', 'orderDate', 'deliveryAddress', 'totalPrice', 'products', 'actions']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['user', 'orderDate', 'deliveryAddress', 'totalPrice', 'products', 'actions'];"></tr>
+    </table>
+
+    <div class="no-data" *ngIf="orders.length === 0">
+      <p>Нет заказов</p>
+    </div>
+  </div>
+</div>

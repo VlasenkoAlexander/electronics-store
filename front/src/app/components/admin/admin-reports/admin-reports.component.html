@@ -1,0 +1,25 @@
+<div class="admin-reports">
+  <h1>Отчёты</h1>
+  <mat-card>
+    <mat-card-content>
+      <div class="report-item">
+        <strong>Всего заказов:</strong> {{ summary.totalOrders }}
+      </div>
+      <div class="report-item">
+        <strong>Общая выручка:</strong> {{ summary.totalSales | currency:'RUB':'symbol-narrow' }}
+      </div>
+      <div class="report-item">
+        <strong>Всего пользователей:</strong> {{ summary.totalUsers }}
+      </div>
+      <div class="report-item">
+        <strong>Средний чек:</strong> {{ summary.avgOrderValue | currency:'RUB':'symbol-narrow' }}
+      </div>
+      <div class="report-item">
+        <strong>Всего отзывов:</strong> {{ summary.totalReviews }}
+      </div>
+      <div class="report-item">
+        <strong>Средний рейтинг:</strong> {{ summary.avgRating | number:'1.1-1' }}/5
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

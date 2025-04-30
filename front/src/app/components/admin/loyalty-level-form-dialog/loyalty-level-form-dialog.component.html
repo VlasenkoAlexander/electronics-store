@@ -1,0 +1,41 @@
+<form [formGroup]="levelForm" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content>
+    <input type="hidden" formControlName="id">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Название</mat-label>
+      <input matInput formControlName="name" placeholder="Введите название уровня">
+      <mat-error *ngIf="levelForm.get('name')?.hasError('required')">
+        Название обязательно
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Мин. сумма</mat-label>
+      <input matInput type="number" formControlName="minTotal" placeholder="Введите минимальную сумму">
+      <span matPrefix>₽&nbsp;</span>
+      <mat-error *ngIf="levelForm.get('minTotal')?.hasError('required')">
+        Мин. сумма обязательна
+      </mat-error>
+      <mat-error *ngIf="levelForm.get('minTotal')?.hasError('min')">
+        Мин. сумма не может быть отрицательной
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Скидка %</mat-label>
+      <input matInput type="number" formControlName="discountPercent" placeholder="Введите % скидки">
+      <mat-error *ngIf="levelForm.get('discountPercent')?.hasError('required')">
+        Скидка обязательна
+      </mat-error>
+      <mat-error *ngIf="levelForm.get('discountPercent')?.hasError('min')">
+        Скидка не может быть отрицательной
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="onCancel()">Отмена</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="levelForm.invalid">Сохранить</button>
+  </div>
+</form>

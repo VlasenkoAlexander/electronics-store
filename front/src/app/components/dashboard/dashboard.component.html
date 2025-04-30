@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <span>Магазин электроники</span>
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Выйти</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<div class="dashboard-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Панель управления</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Добро пожаловать в систему учета клиентов магазина электроники!</p>
+    </mat-card-content>
+  </mat-card>
+</div> 

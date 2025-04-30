@@ -1,0 +1,21 @@
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reviews {
+  margin-top: 2rem;
+}
+
+.review-card {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+.review-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

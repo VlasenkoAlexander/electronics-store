@@ -1,0 +1,66 @@
+<div *ngIf="loading">Загрузка...</div>
+<div *ngIf="error">{{ error }}</div>
+<div *ngIf="product">
+  <button mat-button (click)="goBack()"><mat-icon>arrow_back</mat-icon> Назад</button>
+  <div class="product-detail">
+    <img *ngIf="product.imageUrl" [src]="product.imageUrl" [alt]="product.name">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p class="price">{{ product.price | currency:'RUB':'symbol-narrow' }}</p>
+    <p class="stock" [ngClass]="{'low-stock': product.stock < 5}">В наличии: {{ product.stock }}</p>
+    <button mat-raised-button color="primary" (click)="addToCart()"><mat-icon>add_shopping_cart</mat-icon> В корзину</button>
+    <button mat-raised-button color="accent" *ngIf="authService.isAuthenticated()" (click)="addToWishlist()">
+      <mat-icon>favorite</mat-icon> В избранное
+    </button>
+    <p *ngIf="reviews.length > 0" class="average-rating"><strong>Средняя оценка:</strong> {{ averageRating | number:'1.1-1' }}/5</p>
+
+    <div class="reviews">
+      <h3>Отзывы</h3>
+      <div *ngIf="reviews.length === 0">Пока нет отзывов.</div>
+      <div *ngFor="let rev of reviews" class="review-card">
+        <ng-container *ngIf="editingReviewId !== rev.id; else editReview">
+          <p><strong>{{ rev.user.username }}</strong>: <span class="rating">{{ rev.rating }}/5</span></p>
+          <p>{{ rev.comment }}</p>
+          <p class="date">{{ rev.createdAt | date:'dd.MM.yyyy HH:mm' }}</p>
+          <ng-container>
+            <button *ngIf="currentUser?.id === rev.user.id" mat-icon-button color="primary" (click)="startEditReview(rev)" matTooltip="Редактировать">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button *ngIf="currentUser?.id === rev.user.id || currentUser?.role === 'ADMIN' || currentUser?.role === 'ROLE_ADMIN'" mat-icon-button color="warn" (click)="deleteReview(rev)" matTooltip="Удалить">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </ng-container>
+        </ng-container>
+        <ng-template #editReview>
+          <mat-form-field appearance="fill">
+            <mat-label>Оценка</mat-label>
+            <mat-select [(value)]="editedRating">
+              <mat-option *ngFor="let r of [1,2,3,4,5]" [value]="r">{{ r }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="comment-field">
+            <mat-label>Комментарий</mat-label>
+            <textarea matInput rows="3" [(ngModel)]="editedComment"></textarea>
+          </mat-form-field>
+          <button mat-button color="primary" (click)="saveEditReview(rev)">Сохранить</button>
+          <button mat-button color="warn" (click)="cancelEditReview()">Отмена</button>
+        </ng-template>
+      </div>
+    </div>
+
+    <div *ngIf="canReview()" class="review-form">
+      <h3>Оставить отзыв</h3>
+      <mat-form-field appearance="fill">
+        <mat-label>Оценка</mat-label>
+        <mat-select [(value)]="newRating">
+          <mat-option *ngFor="let r of [1,2,3,4,5]" [value]="r">{{ r }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="comment-field">
+        <mat-label>Комментарий</mat-label>
+        <textarea matInput rows="4" [(ngModel)]="newComment"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="submitReview()">Отправить</button>
+    </div>
+  </div>
+</div>

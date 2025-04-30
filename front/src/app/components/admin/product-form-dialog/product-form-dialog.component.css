@@ -1,0 +1,22 @@
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-row > * {
+  flex: 1;
+}
+
+textarea {
+  resize: vertical;
+}
+
+h2 {
+  margin-bottom: 20px;
+}

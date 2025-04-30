@@ -1,0 +1,46 @@
+<div class="product-list-container">
+  <div class="header">
+    <h1>Каталог товаров</h1>
+  </div>
+
+  <div class="search-container">
+    <mat-form-field appearance="outline">
+      <mat-label>Поиск</mat-label>
+      <input matInput [(ngModel)]="searchTerm" placeholder="Бренд или модель">
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="search-button" (click)="onSearch()">Найти</button>
+  </div>
+
+  <div class="loading" *ngIf="loading">
+    Загрузка товаров...
+  </div>
+
+  <div class="error" *ngIf="error">
+    {{ error }}
+    <button class="btn btn-primary retry-button" (click)="retryLoad()">
+      Попробовать снова
+    </button>
+  </div>
+
+  <div class="products-grid" *ngIf="!loading && !error">
+    <div class="product-card" *ngFor="let product of products" (click)="viewProduct(product)">
+      <img *ngIf="product.imageUrl" [src]="product.imageUrl" [alt]="product.name">
+      <div class="product-info">
+        <h3>{{ product.brand }} {{ product.name }}</h3>
+        <p class="description">{{ product.description }}</p>
+        <p class="price">{{ product.price | currency:'RUB':'symbol-narrow' }}</p>
+        <p class="stock" [ngClass]="{'low-stock': product.stock < 5}">
+          В наличии: {{ product.stock }}
+        </p>
+        <div class="actions">
+          <button mat-raised-button color="primary" (click)="addToCart(product); $event.stopPropagation()">
+            <mat-icon>add_shopping_cart</mat-icon> В корзину
+          </button>
+          <button mat-icon-button color="accent" (click)="addToWishlist(product); $event.stopPropagation()" matTooltip="В избранное">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

@@ -1,0 +1,68 @@
+/* src/app/components/wishlist/wishlist.component.css */
+.wishlist-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.wishlist-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;           /* убираем выход картинки за границы */
+}
+
+.wishlist-card img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;          /* ограничиваем высоту */
+  object-fit: cover;
+}
+
+mat-card-actions {
+  justify-content: space-between;
+}
+
+/* Стили из product-list для одинаковых карточек */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1rem;
+}
+.product-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+.product-info .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #28a745;
+  margin: 0.5rem 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
