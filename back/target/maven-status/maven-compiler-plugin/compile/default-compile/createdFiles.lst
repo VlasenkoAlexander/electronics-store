@@ -1,4 +1,6 @@
 com\elstore\storebackend\security\JwtAuthenticationFilter.class
+com\elstore\storebackend\entity\Inquiry.class
+com\elstore\storebackend\entity\Inquiry$InquiryBuilder.class
 com\elstore\storebackend\StoreBackendApplication.class
 com\elstore\storebackend\controller\CouponController.class
 com\elstore\storebackend\entity\Product.class
@@ -11,6 +13,7 @@ com\elstore\storebackend\entity\LoyaltyLevel.class
 com\elstore\storebackend\entity\Review.class
 com\elstore\storebackend\payload\ReportSummary.class
 com\elstore\storebackend\entity\Coupon.class
+com\elstore\storebackend\repository\InquiryRepository.class
 com\elstore\storebackend\entity\Order.class
 com\elstore\storebackend\security\JwtAuthenticationEntryPoint.class
 com\elstore\storebackend\payload\OrderRequest.class
@@ -21,6 +24,7 @@ com\elstore\storebackend\controller\UserController.class
 com\elstore\storebackend\controller\ReportController.class
 com\elstore\storebackend\config\SecurityConfig.class
 com\elstore\storebackend\repository\CouponRepository.class
+com\elstore\storebackend\controller\InquiryController.class
 com\elstore\storebackend\controller\WishlistController.class
 com\elstore\storebackend\repository\ReviewRepository.class
 com\elstore\storebackend\repository\LoyaltyLevelRepository.class

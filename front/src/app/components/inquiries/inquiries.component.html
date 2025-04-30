@@ -1,0 +1,44 @@
+<div class="inquiries">
+  <h2>Обращения и претензии</h2>
+
+  <form [formGroup]="inquiryForm" (ngSubmit)="submitInquiry()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Тема</mat-label>
+      <input matInput formControlName="subject" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Сообщение</mat-label>
+      <textarea matInput formControlName="message"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="inquiryForm.invalid">
+      Отправить
+    </button>
+  </form>
+
+  <mat-accordion *ngIf="inquiries.length">
+    <mat-expansion-panel *ngFor="let inq of inquiries">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ inq.subject }}</mat-panel-title>
+        <mat-panel-description>{{ inq.createdAt | date:'dd.MM.yyyy HH:mm' }}</mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>{{ inq.message }}</p>
+
+      <div *ngIf="inq.response">
+        <strong>Ответ:</strong>
+        <p>{{ inq.response }}</p>
+        <small>от {{ inq.respondedAt | date:'dd.MM.yyyy HH:mm' }}</small>
+      </div>
+
+      <div *ngIf="isAdmin">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Ответ админа</mat-label>
+          <textarea matInput [(ngModel)]="responseForms[inq.id]"></textarea>
+        </mat-form-field>
+        <button mat-button color="accent" (click)="respond(inq.id)">Отправить ответ</button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

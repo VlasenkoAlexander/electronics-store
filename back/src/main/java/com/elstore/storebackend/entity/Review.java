@@ -30,6 +30,6 @@ public class Review {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
-    @JsonIgnoreProperties({"hibernateLazyInitializer","handler","password","email","role","orders","reviews"})
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler","password","email","role","orders","reviews","wishlist"})
     private User user;
 }

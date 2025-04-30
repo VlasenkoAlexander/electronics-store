@@ -21,6 +21,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
@@ -53,6 +54,7 @@ import { AdminReportsComponent } from './components/admin/admin-reports/admin-re
 import { LoyaltyLevelManagementComponent } from './components/admin/loyalty-level-management/loyalty-level-management.component';
 import { LoyaltyLevelFormDialogComponent } from './components/admin/loyalty-level-form-dialog/loyalty-level-form-dialog.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { InquiriesComponent } from './components/inquiries/inquiries.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     ProductDetailComponent,
     LoyaltyLevelManagementComponent,
     LoyaltyLevelFormDialogComponent,
-    WishlistComponent
+    WishlistComponent,
+    InquiriesComponent
   ],
   imports: [
     BrowserModule,
@@ -102,6 +105,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatGridListModule,
+    MatExpansionModule,
     RouterModule
   ],
   providers: [

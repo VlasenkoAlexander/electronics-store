@@ -9,6 +9,7 @@ C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\UserController.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\ProductController.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\payload\JwtAuthenticationResponse.java
+C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\InquiryController.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\ReportController.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\entity\Product.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\security\JwtAuthenticationFilter.java
@@ -29,6 +30,8 @@ C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\entity\Order.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\entity\Review.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\security\JwtTokenProvider.java
+C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\entity\Inquiry.java
+C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\repository\InquiryRepository.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\repository\CouponRepository.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\security\JwtAuthenticationEntryPoint.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\entity\User.java

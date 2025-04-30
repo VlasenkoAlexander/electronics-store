@@ -10,6 +10,9 @@
   <button mat-button [routerLink]="['/my-orders']" *ngIf="isAuthenticated()">
     <mat-icon>receipt_long</mat-icon> Мои заказы
   </button>
+  <button mat-button [routerLink]="['/inquiries']" *ngIf="isAuthenticated()">
+    <mat-icon>question_answer</mat-icon> Обращения
+  </button>
   <button mat-button [routerLink]="['/profile']" *ngIf="isAuthenticated()">
     <mat-icon>person</mat-icon> Личный кабинет
   </button>

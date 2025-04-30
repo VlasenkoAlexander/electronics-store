@@ -58,6 +58,10 @@ public class SecurityConfig {
             .antMatchers(HttpMethod.POST, "/api/products/**").hasRole("ADMIN")
             .antMatchers("/api/orders/**").authenticated()
             .antMatchers("/api/reports/**").hasRole("ADMIN")
+            .antMatchers(HttpMethod.GET, "/api/inquiries/me").authenticated()
+            .antMatchers(HttpMethod.POST, "/api/inquiries").authenticated()
+            .antMatchers(HttpMethod.GET, "/api/inquiries").hasRole("ADMIN")
+            .antMatchers(HttpMethod.PUT, "/api/inquiries/*/response").hasRole("ADMIN")
             .anyRequest().authenticated()
             .and()
             .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);

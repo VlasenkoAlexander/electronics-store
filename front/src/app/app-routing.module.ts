@@ -18,6 +18,7 @@ import { CouponManagementComponent } from './components/admin/coupon-management/
 import { AdminReportsComponent } from './components/admin/admin-reports/admin-reports.component';
 import { LoyaltyLevelManagementComponent } from './components/admin/loyalty-level-management/loyalty-level-management.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { InquiriesComponent } from './components/inquiries/inquiries.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'wishlist', component: WishlistComponent, canActivate: [AuthGuard] },
+  { path: 'inquiries', component: InquiriesComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
 
