@@ -1,3 +1,125 @@
- 
+ @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, 'Helvetica Neue', sans-serif; background: #fafafa; }
+
+.spacer { flex: 1 1 auto; }
+
+/* Контейнер страницы: белый фон, тень и скругления */
+.container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 16px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Заголовки страниц */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* Материал-карточки */
+.mat-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+/* Формы */
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Аккордеон */
+.mat-expansion-panel {
+  margin: 16px 0;
+}
+.mat-expansion-panel-header {
+  font-weight: bold;
+}
+
+.app-footer { text-align: center; padding: 16px; background: #f5f5f5; margin-top: 32px; }
+
+/* Product List Styling */
+.header h1 {
+  margin-bottom: 16px;
+  font-size: 2rem;
+}
+.search-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.search-container mat-form-field {
+  flex: 1;
+}
+.search-button {
+  height: 56px;
+}
+.loading, .error {
+  text-align: center;
+  padding: 24px;
+  color: #666;
+}
+.error .retry-button {
+  margin-top: 16px;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  overflow: hidden;
+}
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.product-info {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.product-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+.product-info .description {
+  flex: 1;
+  margin-bottom: 8px;
+  color: #666;
+}
+.product-info .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.product-info .stock {
+  margin-bottom: 8px;
+  color: #333;
+}
+.product-info .stock.low-stock {
+  color: #e53935;
+  font-weight: bold;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
