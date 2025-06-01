@@ -10,4 +10,5 @@ export interface Product {
   category?: string;
   stock: number;
   reviews?: Review[];
+  averageRating?: number;
 }

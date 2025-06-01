@@ -57,6 +57,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { InquiriesComponent } from './components/inquiries/inquiries.component';
 import { SalesStatisticsComponent } from './components/admin/sales-statistics/sales-statistics.component';
 import { CustomerSalesStatisticsComponent } from './components/admin/customer-sales-statistics/customer-sales-statistics.component';
+import { ProductRatingStatisticsComponent } from './components/admin/product-rating-statistics/product-rating-statistics.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { CustomerSalesStatisticsComponent } from './components/admin/customer-sa
     WishlistComponent,
     InquiriesComponent,
     SalesStatisticsComponent,
-    CustomerSalesStatisticsComponent
+    CustomerSalesStatisticsComponent,
+    ProductRatingStatisticsComponent
   ],
   imports: [
     BrowserModule,

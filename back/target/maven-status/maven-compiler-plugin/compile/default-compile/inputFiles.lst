@@ -7,6 +7,7 @@ C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\repository\LoyaltyLevelRepository.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\exception\ResourceNotFoundException.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\repository\UserRepository.java
+C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\payload\ProductRating.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\UserController.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\ProductController.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\payload\JwtAuthenticationResponse.java
@@ -29,6 +30,7 @@ C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\OrderController.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\repository\ProductRepository.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\AuthController.java
+C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\ProductRatingController.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\entity\Order.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\CustomerSalesController.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\entity\Review.java

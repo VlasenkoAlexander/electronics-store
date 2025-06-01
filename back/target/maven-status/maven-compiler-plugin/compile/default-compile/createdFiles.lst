@@ -29,8 +29,10 @@ com\elstore\storebackend\controller\InquiryController.class
 com\elstore\storebackend\controller\WishlistController.class
 com\elstore\storebackend\repository\ReviewRepository.class
 com\elstore\storebackend\repository\LoyaltyLevelRepository.class
+com\elstore\storebackend\payload\ProductRating.class
 com\elstore\storebackend\controller\CustomerSalesController.class
 com\elstore\storebackend\payload\JwtAuthenticationResponse.class
+com\elstore\storebackend\controller\ProductRatingController.class
 com\elstore\storebackend\payload\CustomerSales.class
 com\elstore\storebackend\controller\ProductController.class
 com\elstore\storebackend\payload\RegisterRequest.class

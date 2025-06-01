@@ -14,6 +14,17 @@ import { WishlistService } from '../../services/wishlist.service';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  displayedProducts: Product[] = [];
+  categories: string[] = [];
+  selectedCategory: string = '';
+  sortOptions = [
+    { value: '', viewValue: 'По умолчанию' },
+    { value: 'price-asc', viewValue: 'Цена ↑' },
+    { value: 'price-desc', viewValue: 'Цена ↓' },
+    { value: 'rating-asc', viewValue: 'Рейтинг ↑' },
+    { value: 'rating-desc', viewValue: 'Рейтинг ↓' }
+  ];
+  selectedSort: string = '';
   loading = true;
   error: string | null = null;
   searchTerm: string = '';
@@ -37,8 +48,16 @@ export class ProductListComponent implements OnInit {
     
     this.productService.getProducts(this.searchTerm).subscribe({
       next: (products) => {
-        console.log('Получены продукты:', products);
-        this.products = products;
+        // compute average rating
+        this.products = products.map(p => ({
+          ...p,
+          averageRating: p.reviews?.length
+            ? p.reviews.reduce((sum, r) => sum + r.rating, 0) / p.reviews.length
+            : 0
+        }));
+        // extract categories
+        this.categories = Array.from(new Set(this.products.map(p => p.category).filter((c): c is string => !!c)));
+        this.applyFilters();
         this.loading = false;
       },
       error: (err) => {
@@ -78,5 +97,27 @@ export class ProductListComponent implements OnInit {
 
   onSearch(): void {
     this.loadProducts();
+  }
+
+  applyFilters(): void {
+    let prods = [...this.products];
+    if (this.selectedCategory) {
+      prods = prods.filter(p => p.category === this.selectedCategory);
+    }
+    switch (this.selectedSort) {
+      case 'price-asc':
+        prods.sort((a, b) => a.price - b.price);
+        break;
+      case 'price-desc':
+        prods.sort((a, b) => b.price - a.price);
+        break;
+      case 'rating-asc':
+        prods.sort((a, b) => (a.averageRating ?? 0) - (b.averageRating ?? 0));
+        break;
+      case 'rating-desc':
+        prods.sort((a, b) => (b.averageRating ?? 0) - (a.averageRating ?? 0));
+        break;
+    }
+    this.displayedProducts = prods;
   }
 }

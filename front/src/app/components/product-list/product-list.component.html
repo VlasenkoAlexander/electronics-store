@@ -22,8 +22,25 @@
     </button>
   </div>
 
+  <!-- Добавлено: фильтрация и сортировка -->
+  <div class="filter-sort-container">
+    <mat-form-field appearance="outline">
+      <mat-label>Категория</mat-label>
+      <mat-select [(value)]="selectedCategory" (selectionChange)="applyFilters()">
+        <mat-option value="">Все категории</mat-option>
+        <mat-option *ngFor="let cat of categories" [value]="cat">{{cat}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Сортировка</mat-label>
+      <mat-select [(value)]="selectedSort" (selectionChange)="applyFilters()">
+        <mat-option *ngFor="let opt of sortOptions" [value]="opt.value">{{opt.viewValue}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
   <div class="products-grid" *ngIf="!loading && !error">
-    <div class="product-card" *ngFor="let product of products" (click)="viewProduct(product)">
+    <div class="product-card" *ngFor="let product of displayedProducts" (click)="viewProduct(product)">
       <img *ngIf="product.imageUrl" [src]="product.imageUrl" [alt]="product.name">
       <div class="product-info">
         <h3>{{ product.brand }} {{ product.name }}</h3>
@@ -43,4 +60,4 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
