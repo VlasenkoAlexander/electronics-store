@@ -1,6 +1,7 @@
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\entity\Coupon.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\entity\LoyaltyLevel.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\ReviewController.java
+C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\payload\ProductSales.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\config\SecurityConfig.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\CouponController.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\repository\LoyaltyLevelRepository.java
@@ -13,6 +14,7 @@ C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\ReportController.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\entity\Product.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\security\JwtAuthenticationFilter.java
+C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\controller\SalesController.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\StoreBackendApplication.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\payload\OrderRequest.java
 C:\Users\hativ\Desktop\semester8\diploma\elstore\back\src\main\java\com\elstore\storebackend\repository\ReviewRepository.java

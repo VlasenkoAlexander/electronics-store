@@ -55,6 +55,7 @@ import { LoyaltyLevelManagementComponent } from './components/admin/loyalty-leve
 import { LoyaltyLevelFormDialogComponent } from './components/admin/loyalty-level-form-dialog/loyalty-level-form-dialog.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { InquiriesComponent } from './components/inquiries/inquiries.component';
+import { SalesStatisticsComponent } from './components/admin/sales-statistics/sales-statistics.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { InquiriesComponent } from './components/inquiries/inquiries.component';
     LoyaltyLevelManagementComponent,
     LoyaltyLevelFormDialogComponent,
     WishlistComponent,
-    InquiriesComponent
+    InquiriesComponent,
+    SalesStatisticsComponent
   ],
   imports: [
     BrowserModule,

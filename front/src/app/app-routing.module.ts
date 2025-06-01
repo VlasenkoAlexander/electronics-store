@@ -19,6 +19,7 @@ import { AdminReportsComponent } from './components/admin/admin-reports/admin-re
 import { LoyaltyLevelManagementComponent } from './components/admin/loyalty-level-management/loyalty-level-management.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { InquiriesComponent } from './components/inquiries/inquiries.component';
+import { SalesStatisticsComponent } from './components/admin/sales-statistics/sales-statistics.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'admin/coupons', component: CouponManagementComponent, canActivate: [AuthGuard, AdminGuard] },
   { path: 'admin/reports', component: AdminReportsComponent, canActivate: [AuthGuard, AdminGuard] },
   { path: 'admin/loyalty-levels', component: LoyaltyLevelManagementComponent, canActivate: [AuthGuard, AdminGuard] },
+  { path: 'admin/sales', component: SalesStatisticsComponent, canActivate: [AuthGuard, AdminGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'wishlist', component: WishlistComponent, canActivate: [AuthGuard] },

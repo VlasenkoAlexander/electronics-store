@@ -23,6 +23,7 @@ com\elstore\storebackend\entity\User$UserBuilder.class
 com\elstore\storebackend\controller\UserController.class
 com\elstore\storebackend\controller\ReportController.class
 com\elstore\storebackend\config\SecurityConfig.class
+com\elstore\storebackend\payload\ProductSales.class
 com\elstore\storebackend\repository\CouponRepository.class
 com\elstore\storebackend\controller\InquiryController.class
 com\elstore\storebackend\controller\WishlistController.class
@@ -35,6 +36,7 @@ com\elstore\storebackend\repository\OrderRepository.class
 com\elstore\storebackend\repository\UserRepository.class
 com\elstore\storebackend\security\CustomUserDetailsService.class
 com\elstore\storebackend\controller\AuthController.class
+com\elstore\storebackend\controller\SalesController.class
 com\elstore\storebackend\payload\LoginRequest.class
 com\elstore\storebackend\repository\ProductRepository.class
 com\elstore\storebackend\security\JwtTokenProvider.class

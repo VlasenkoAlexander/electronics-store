@@ -4,7 +4,7 @@
   <button mat-button [routerLink]="['/cart']" matBadge="{{cartItemCount}}" matBadgeColor="accent">
     <mat-icon>shopping_cart</mat-icon> Корзина
   </button>
-  <button mat-button [routerLink]="['/wishlist']" *ngIf="isAuthenticated()">
+  <button mat-button [routerLink]="['/wishlist']" matBadge="{{wishlistItemCount}}" matBadgeColor="accent" *ngIf="isAuthenticated()">
     <mat-icon>favorite</mat-icon> Избранное
   </button>
   <button mat-button [routerLink]="['/my-orders']" *ngIf="isAuthenticated()">
