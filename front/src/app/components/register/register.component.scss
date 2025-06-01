@@ -25,6 +25,15 @@
   text-align: center;
 }
 
+.consent-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.consent-container .mat-checkbox-layout .mat-checkbox-label {
+  white-space: normal;
+}
+
 button[type="submit"] {
   width: 100%;
   margin-bottom: 8px;

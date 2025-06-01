@@ -22,6 +22,7 @@ import { InquiriesComponent } from './components/inquiries/inquiries.component';
 import { SalesStatisticsComponent } from './components/admin/sales-statistics/sales-statistics.component';
 import { CustomerSalesStatisticsComponent } from './components/admin/customer-sales-statistics/customer-sales-statistics.component';
 import { ProductRatingStatisticsComponent } from './components/admin/product-rating-statistics/product-rating-statistics.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'admin/sales', component: SalesStatisticsComponent, canActivate: [AuthGuard, AdminGuard] },
   { path: 'admin/customer-sales', component: CustomerSalesStatisticsComponent, canActivate: [AuthGuard, AdminGuard] },
   { path: 'admin/product-rating', component: ProductRatingStatisticsComponent, canActivate: [AuthGuard, AdminGuard] },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'wishlist', component: WishlistComponent, canActivate: [AuthGuard] },

@@ -58,6 +58,7 @@ import { InquiriesComponent } from './components/inquiries/inquiries.component';
 import { SalesStatisticsComponent } from './components/admin/sales-statistics/sales-statistics.component';
 import { CustomerSalesStatisticsComponent } from './components/admin/customer-sales-statistics/customer-sales-statistics.component';
 import { ProductRatingStatisticsComponent } from './components/admin/product-rating-statistics/product-rating-statistics.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { ProductRatingStatisticsComponent } from './components/admin/product-rat
     InquiriesComponent,
     SalesStatisticsComponent,
     CustomerSalesStatisticsComponent,
-    ProductRatingStatisticsComponent
+    ProductRatingStatisticsComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,
